@@ -11,7 +11,7 @@ new_model = "llama-1.1B-chat-guanaco"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 dataset = load_dataset(guanaco_dataset, split="train")
 model = AutoModelForCausalLM.from_pretrained(base_model)
-model.to(device)
+new_update = model.to(device)
 model.config.use_cache = True
 model.config.pretraining_tp = 1 # basically the number of systems that can work parllely
 
