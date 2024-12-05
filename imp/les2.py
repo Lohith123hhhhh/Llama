@@ -70,6 +70,6 @@ trainer.train()   # train the model
 trainer.model.save_pretrained(new_model)
 trainer.tokenizer.save_pretrained(new_model)
 prompt = "Who is Napoleon Bonaparte?"
-pipe = pipeline(task="text-generation", model=new_model, tokenizer=tokenizer,)
+pipe = pipeline(task="text-generation", model=model, tokenizer=tokenizer,)
 result = pipe(f"{prompt}")
 print(result[0]["generated_text"])
